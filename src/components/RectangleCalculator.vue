@@ -14,7 +14,7 @@ const perimeter = computed(
   <div>
     <div class="grid grid-cols-3 gap-y-2">
       <div class="flex items-center gap-4">
-        <span class="text-xl italic">l</span>
+        <span class="font-serif text-xl italic">l</span>
         <span class="text-sm">Length</span>
       </div>
 
@@ -26,7 +26,7 @@ const perimeter = computed(
       />
 
       <div class="flex items-center gap-4">
-        <span class="text-xl italic">w</span>
+        <span class="font-serif text-xl italic">w</span>
         <span class="text-sm">Width</span>
       </div>
 
