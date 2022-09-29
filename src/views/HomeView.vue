@@ -28,7 +28,7 @@ onMounted(() => {
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="hidden h-6 w-6 dark:block"
+          class="hidden w-6 h-6 dark:block"
         >
           <path
             stroke-linecap="round"
@@ -42,7 +42,7 @@ onMounted(() => {
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="block h-6 w-6 dark:hidden"
+          class="block w-6 h-6 dark:hidden"
         >
           <path
             stroke-linecap="round"
@@ -54,9 +54,9 @@ onMounted(() => {
     </div>
   </header>
   <main
-    class="grid min-h-screen justify-center bg-gradient-to-t from-indigo-100 transition-all ease-linear dark:bg-neutral-800 dark:from-inherit dark:text-white"
+    class="grid justify-center min-h-screen transition-all ease-linear bg-gradient-to-t from-indigo-100 dark:bg-neutral-800 dark:from-inherit dark:text-white"
   >
-    <div class="flex h-[50vh] items-end">
+    <div class="flex min-h-[50vh] items-end">
       <div class="flex flex-row gap-4">
         <ShapeCard
           shape="rectangle"
@@ -75,7 +75,7 @@ onMounted(() => {
         />
       </div>
     </div>
-    <div ref="calculator" class="h-[50vh]">
+    <div ref="calculator" class="min-h-[50vh]">
       <div v-if="isShape('rectangle')" class="mt-12">
         <RectangleCalculator />
       </div>
