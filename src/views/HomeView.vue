@@ -54,10 +54,10 @@ onMounted(() => {
     </div>
   </header>
   <main
-    class="grid min-h-screen justify-center bg-gradient-to-t from-indigo-100 transition-all ease-linear dark:bg-neutral-800 dark:from-inherit dark:text-white"
+    class="container grid min-h-screen justify-center bg-gradient-to-t from-indigo-100 p-2 transition-all ease-linear dark:bg-neutral-800 dark:from-inherit dark:text-white"
   >
     <div class="flex min-h-[50vh] items-end">
-      <div class="flex flex-row gap-4">
+      <div class="grid grid-flow-col gap-2 sm:gap-4">
         <ShapeCard
           shape="rectangle"
           @click="setShape('rectangle')"
