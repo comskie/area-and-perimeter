@@ -41,7 +41,7 @@ const cardTransform = computed(() => {
     }"
     class="flex select-none flex-col items-center justify-center space-y-4 rounded-md border p-4 shadow-xl backdrop-blur-md transition-all duration-200 ease-out dark:border-indigo-600"
   >
-    <img :src="imagePath" :alt="shape" height="80" width="80" />
+    <img class="p-2" :src="imagePath" :alt="shape" height="80" width="80" />
     <div>
       <span class="font text-2xl capitalize">{{ shape }}</span>
     </div>
