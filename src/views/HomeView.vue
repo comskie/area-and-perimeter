@@ -59,7 +59,7 @@ onMounted(() => {
     <main
       class="container flex items-center justify-center min-h-screen transition-all ease-linear"
     >
-      <div class="grid min-h-screen grid-rows-2 p-4">
+      <div class="grid min-h-screen grid-rows-2 px-4 py-12">
         <div class="grid grid-cols-3 gap-2 place-content-end sm:gap-4">
           <ShapeCard
             shape="rectangle"
@@ -78,16 +78,10 @@ onMounted(() => {
           />
         </div>
 
-        <div ref="calculator">
-          <div v-if="isShape('rectangle')" class="mt-12">
-            <RectangleCalculator />
-          </div>
-          <div v-if="isShape('square')" class="mt-12">
-            <SquareCalculator />
-          </div>
-          <div v-if="isShape('triangle')" class="mt-12">
-            <TriangleCalculator />
-          </div>
+        <div ref="calculator" class="mt-12">
+          <RectangleCalculator v-if="isShape('rectangle')" />
+          <SquareCalculator v-if="isShape('square')" />
+          <TriangleCalculator v-if="isShape('triangle')" />
         </div>
       </div>
     </main>
