@@ -20,7 +20,7 @@ onMounted(() => {
 </script>
 <template>
   <div
-    class="relative min-h-screen bg-gradient-to-t from-indigo-100 dark:bg-neutral-800 dark:from-inherit dark:text-white"
+    class="min-h-screen bg-gradient-to-t from-indigo-100 dark:bg-neutral-800 dark:from-inherit dark:text-white"
   >
     <header class="absolute inset-x-0 top-0">
       <div class="container flex justify-end p-4">
@@ -91,7 +91,7 @@ onMounted(() => {
         </div>
       </div>
     </main>
-    <footer class="inset-x-0 bottom-0" style="position: absolute">
+    <footer>
       <div class="flex justify-end px-2 pb-1">
         <a
           href="https://www.flaticon.com/free-icons/shapes"
