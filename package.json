@@ -1,5 +1,5 @@
 {
-  "name": "area-of-perimeter",
+  "name": "area-and-perimeter",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
