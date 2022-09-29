@@ -59,7 +59,7 @@ onMounted(() => {
     <main
       class="container flex items-center justify-center min-h-screen transition-all ease-linear"
     >
-      <div class="grid grid-rows-2 p-4">
+      <div class="grid min-h-screen grid-rows-2 p-4">
         <div class="flex items-end">
           <div class="grid grid-cols-3 gap-2 sm:gap-4">
             <ShapeCard
