@@ -60,7 +60,7 @@ const perimeter = computed(
           </div>
 
           <input
-            class="col-span-2 input"
+            class="input col-span-2"
             v-model="areaBBase"
             type="text"
             placeholder="Enter value"
@@ -71,7 +71,7 @@ const perimeter = computed(
             <span class="text-sm">Height</span>
           </div>
           <input
-            class="col-span-2 input"
+            class="input col-span-2"
             v-model="areaHbHeight"
             type="text"
             placeholder="Enter value"
@@ -90,7 +90,7 @@ const perimeter = computed(
           </div>
 
           <input
-            class="col-span-2 input"
+            class="input col-span-2"
             v-model="perimeterASide"
             type="text"
             placeholder="Enter value"
@@ -102,7 +102,7 @@ const perimeter = computed(
           </div>
 
           <input
-            class="col-span-2 input"
+            class="input col-span-2"
             v-model="perimeterBBase"
             type="text"
             placeholder="Enter value"
@@ -114,7 +114,7 @@ const perimeter = computed(
           </div>
 
           <input
-            class="col-span-2 input"
+            class="input col-span-2"
             v-model="perimeterCSide"
             type="text"
             placeholder="Enter value"
