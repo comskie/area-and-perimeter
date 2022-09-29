@@ -28,7 +28,7 @@ onMounted(() => {
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="hidden w-6 h-6 dark:block"
+          class="hidden h-6 w-6 dark:block"
         >
           <path
             stroke-linecap="round"
@@ -42,7 +42,7 @@ onMounted(() => {
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="block w-6 h-6 dark:hidden"
+          class="block h-6 w-6 dark:hidden"
         >
           <path
             stroke-linecap="round"
@@ -54,7 +54,7 @@ onMounted(() => {
     </div>
   </header>
   <main
-    class="grid justify-center min-h-screen transition-all ease-linear bg-gradient-to-t from-indigo-100 dark:bg-neutral-800 dark:from-inherit dark:text-white"
+    class="grid min-h-screen justify-center bg-gradient-to-t from-indigo-100 transition-all ease-linear dark:bg-neutral-800 dark:from-inherit dark:text-white"
   >
     <div class="flex min-h-[50vh] items-end">
       <div class="flex flex-row gap-4">
