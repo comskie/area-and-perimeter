@@ -1,6 +1,5 @@
-import { ref } from "vue";
 import { defineStore } from "pinia";
-import { useLocalStorage, useSessionStorage } from "@vueuse/core";
+import { useSessionStorage } from "@vueuse/core";
 
 type ShapeString = "square" | "rectangle" | "triangle";
 
