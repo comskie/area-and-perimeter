@@ -11,7 +11,7 @@ const perimeter = computed(() => 4 * Number(aSide.value));
   <div>
     <div class="grid grid-cols-3">
       <div class="flex items-center gap-4">
-        <span class="text-xl italic">a</span>
+        <span class="font-serif text-xl italic">a</span>
         <span class="text-sm">Side</span>
       </div>
       <input
