@@ -1,49 +1,37 @@
 <script lang="ts" setup>
-import { computed, ref } from "vue";
 import type { PropType } from "vue";
-import { useMouseInElement } from "@vueuse/core";
 
 const props = defineProps({
   shape: {
     type: String as PropType<"square" | "rectangle" | "triangle">,
     required: true,
   },
+  isActive: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const imagePath = new URL(`../assets/icons/${props.shape}.png`, import.meta.url)
   .href;
-
-const target = ref(null);
-const { elementX, elementY, isOutside, elementHeight, elementWidth } =
-  useMouseInElement(target);
-
-const cardTransform = computed(() => {
-  const MAX_ROTATION = 12;
-  const rX = (
-    MAX_ROTATION / 2 -
-    (elementY.value / elementHeight.value) * MAX_ROTATION
-  ).toFixed(2); // handles x-axis
-  const rY = (
-    (elementX.value / elementWidth.value) * MAX_ROTATION -
-    MAX_ROTATION / 2
-  ).toFixed(2); // handles y-axis
-  return isOutside.value
-    ? ""
-    : `perspective(${elementWidth.value}px) rotateX(${rX}deg) rotateY(${rY}deg)`;
-});
 </script>
 
 <template>
-  <div
+  <button
     ref="target"
-    :style="{
-      transform: cardTransform,
-    }"
-    class="flex select-none flex-col items-center justify-center space-y-4 rounded-md border p-4 shadow-xl backdrop-blur-md transition-all duration-200 ease-out dark:border-indigo-600"
+    :class="[
+      'flex h-36 w-28 cursor-pointer select-none flex-col items-center justify-center space-y-4 rounded-md border-indigo-600 bg-indigo-500 p-4  shadow-indigo-200 transition-all duration-200  ease-out dark:bg-indigo-600 dark:shadow-indigo-600/30 sm:h-44 sm:w-36 ',
+      isActive
+        ? '-translate-y-2 scale-105 font-bold shadow-xl'
+        : 'shadow hover:-translate-y-1 hover:shadow-lg',
+    ]"
   >
-    <img class="p-2" :src="imagePath" :alt="shape" height="80" width="80" />
+    <img class="mt-2" :src="imagePath" :alt="shape" height="80" width="80" />
     <div>
-      <span class="font text-2xl capitalize">{{ shape }}</span>
+      <span
+        class="font text-lg capitalize text-stone-100 dark:text-white sm:text-2xl"
+        >{{ shape }}</span
+      >
     </div>
-  </div>
+  </button>
 </template>
