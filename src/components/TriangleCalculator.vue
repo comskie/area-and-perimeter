@@ -25,10 +25,10 @@ const perimeter = computed(
 <template>
   <div>
     <div>
-      <span>Solve for</span>
+      <span>Solve for&nbsp;</span>
       <button
         :class="[
-          'ml-1 underline decoration-dotted underline-offset-4 transition-all ease-linear',
+          'underline decoration-dotted underline-offset-4 transition-all ease-linear',
           isSolvingArea
             ? 'font-semibold no-underline'
             : 'hover:bg-slate-100 dark:hover:bg-indigo-800',
@@ -40,7 +40,7 @@ const perimeter = computed(
       or
       <button
         :class="[
-          'ml-1 underline decoration-dotted underline-offset-4 transition-all ease-linear',
+          'underline decoration-dotted underline-offset-4 transition-all ease-linear',
           !isSolvingArea
             ? 'font-semibold no-underline'
             : 'hover:bg-slate-100 dark:hover:bg-indigo-800',
@@ -60,7 +60,7 @@ const perimeter = computed(
           </div>
 
           <input
-            class="input col-span-2"
+            class="col-span-2 input"
             v-model="areaBBase"
             type="text"
             placeholder="Enter value"
@@ -71,7 +71,7 @@ const perimeter = computed(
             <span class="text-sm">Height</span>
           </div>
           <input
-            class="input col-span-2"
+            class="col-span-2 input"
             v-model="areaHbHeight"
             type="text"
             placeholder="Enter value"
@@ -90,7 +90,7 @@ const perimeter = computed(
           </div>
 
           <input
-            class="input col-span-2"
+            class="col-span-2 input"
             v-model="perimeterASide"
             type="text"
             placeholder="Enter value"
@@ -102,7 +102,7 @@ const perimeter = computed(
           </div>
 
           <input
-            class="input col-span-2"
+            class="col-span-2 input"
             v-model="perimeterBBase"
             type="text"
             placeholder="Enter value"
@@ -114,7 +114,7 @@ const perimeter = computed(
           </div>
 
           <input
-            class="input col-span-2"
+            class="col-span-2 input"
             v-model="perimeterCSide"
             type="text"
             placeholder="Enter value"
