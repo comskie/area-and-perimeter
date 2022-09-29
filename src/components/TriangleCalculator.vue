@@ -55,7 +55,7 @@ const perimeter = computed(
       <div v-if="isSolvingArea" class="mt-4">
         <div class="grid grid-cols-3 gap-y-2">
           <div class="flex items-center gap-4">
-            <span class="text-xl italic">b</span>
+            <span class="font-serif text-xl italic">b</span>
             <span class="text-sm">Base</span>
           </div>
 
@@ -67,7 +67,7 @@ const perimeter = computed(
           />
 
           <div class="flex items-center gap-4">
-            <span class="text-xl italic">h<sub>b</sub></span>
+            <span class="font-serif text-xl italic">h<sub>b</sub></span>
             <span class="text-sm">Height</span>
           </div>
           <input
@@ -85,7 +85,7 @@ const perimeter = computed(
       <div v-if="!isSolvingArea" class="mt-4">
         <div class="grid grid-cols-3 gap-y-2">
           <div class="flex items-center gap-4">
-            <span class="text-xl italic">a</span>
+            <span class="font-serif text-xl italic">a</span>
             <span class="text-sm">Side</span>
           </div>
 
@@ -97,7 +97,7 @@ const perimeter = computed(
           />
 
           <div class="flex items-center gap-4">
-            <span class="text-xl italic">b</span>
+            <span class="font-serif text-xl italic">b</span>
             <span class="text-sm">Base</span>
           </div>
 
@@ -109,7 +109,7 @@ const perimeter = computed(
           />
 
           <div class="flex items-center gap-4">
-            <span class="text-xl italic">c</span>
+            <span class="font-serif text-xl italic">c</span>
             <span class="text-sm">Side</span>
           </div>
 
