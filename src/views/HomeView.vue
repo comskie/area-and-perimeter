@@ -5,10 +5,18 @@ import SquareCalculator from "../components/SquareCalculator.vue";
 import RectangleCalculator from "../components/RectangleCalculator.vue";
 import TriangleCalculator from "../components/TriangleCalculator.vue";
 import { useShapeStore } from "@/stores/shape";
+import { onMounted, ref } from "vue";
+import autoAnimate from "@formkit/auto-animate";
 
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
 const { isShape, setShape } = useShapeStore();
+
+const calculator = ref();
+
+onMounted(() => {
+  autoAnimate(calculator.value);
+});
 </script>
 <template>
   <header class="absolute inset-x-0 top-0">
@@ -46,25 +54,50 @@ const { isShape, setShape } = useShapeStore();
     </div>
   </header>
   <main
-    class="grid min-h-screen justify-center transition-all ease-in dark:bg-neutral-800 dark:text-white"
+    class="grid min-h-screen justify-center bg-gradient-to-t from-indigo-100 transition-all ease-linear dark:bg-neutral-800 dark:from-inherit dark:text-white"
   >
     <div class="flex h-[50vh] items-end">
       <div class="flex flex-row gap-4">
-        <ShapeCard shape="rectangle" @click="setShape('rectangle')" />
-        <ShapeCard shape="square" @click="setShape('square')" />
-        <ShapeCard shape="triangle" @click="setShape('triangle')" />
+        <ShapeCard
+          shape="rectangle"
+          @click="setShape('rectangle')"
+          :isActive="isShape('rectangle')"
+        />
+        <ShapeCard
+          shape="square"
+          @click="setShape('square')"
+          :isActive="isShape('square')"
+        />
+        <ShapeCard
+          shape="triangle"
+          @click="setShape('triangle')"
+          :isActive="isShape('triangle')"
+        />
       </div>
     </div>
-    <div class="h-[50vh]">
-      <div v-if="isShape('square')" class="mt-12">
-        <SquareCalculator />
-      </div>
+    <div ref="calculator" class="h-[50vh]">
       <div v-if="isShape('rectangle')" class="mt-12">
         <RectangleCalculator />
+      </div>
+      <div v-if="isShape('square')" class="mt-12">
+        <SquareCalculator />
       </div>
       <div v-if="isShape('triangle')" class="mt-12">
         <TriangleCalculator />
       </div>
     </div>
   </main>
+  <footer class="absolute inset-x-0 bottom-0 dark:text-white">
+    <div class="container flex justify-end px-2 pb-1">
+      <a
+        href="https://www.flaticon.com/free-icons/shapes"
+        title="shapes icons"
+        class="underline decoration-dotted underline-offset-2"
+      >
+        <span class="text-sm">
+          Shapes icons created by Pixel perfect - Flaticon
+        </span>
+      </a>
+    </div>
+  </footer>
 </template>
