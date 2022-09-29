@@ -1,15 +1,24 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 
-const aSide = ref(0);
-const bBase = ref(0);
-const cSide = ref(0);
-const hbHeight = ref(0);
+// perimeter
+const perimeterASide = ref<number>();
+const perimeterBBase = ref<number>();
+const perimeterCSide = ref<number>();
+// area
+const areaBBase = ref<number>();
+const areaHbHeight = ref<number>();
+
 const isSolvingArea = ref(true);
 
-const area = computed(() => (Number(bBase.value) * Number(hbHeight.value)) / 2);
+const area = computed(
+  () => (Number(areaBBase.value) * Number(areaHbHeight.value)) / 2
+);
 const perimeter = computed(
-  () => Number(aSide.value) + Number(bBase.value) + Number(cSide.value)
+  () =>
+    Number(perimeterASide.value) +
+    Number(perimeterBBase.value) +
+    Number(perimeterCSide.value)
 );
 </script>
 
@@ -19,8 +28,10 @@ const perimeter = computed(
       <span>Solve for</span>
       <button
         :class="[
-          'ml-1 underline decoration-dotted underline-offset-4',
-          isSolvingArea ? 'font-semibold no-underline' : 'hover:bg-slate-100',
+          'ml-1 underline decoration-dotted underline-offset-4 transition-all ease-linear',
+          isSolvingArea
+            ? 'font-semibold no-underline'
+            : 'hover:bg-slate-100 dark:hover:bg-indigo-800',
         ]"
         @click="isSolvingArea = true"
       >
@@ -29,8 +40,10 @@ const perimeter = computed(
       or
       <button
         :class="[
-          'ml-1 underline decoration-dotted underline-offset-4',
-          !isSolvingArea ? 'font-semibold no-underline' : 'hover:bg-slate-100',
+          'ml-1 underline decoration-dotted underline-offset-4 transition-all ease-linear',
+          !isSolvingArea
+            ? 'font-semibold no-underline'
+            : 'hover:bg-slate-100 dark:hover:bg-indigo-800',
         ]"
         @click="isSolvingArea = false"
       >
@@ -38,48 +51,82 @@ const perimeter = computed(
       </button>
     </div>
 
-    <div v-if="isSolvingArea" class="mt-4">
-      <div class="grid grid-cols-3 gap-y-2">
-        <div class="flex items-center gap-4">
-          <span class="text-xl italic">b</span>
-          <span class="text-sm">Base</span>
+    <div>
+      <div v-if="isSolvingArea" class="mt-4">
+        <div class="grid grid-cols-3 gap-y-2">
+          <div class="flex items-center gap-4">
+            <span class="text-xl italic">b</span>
+            <span class="text-sm">Base</span>
+          </div>
+
+          <input
+            class="input col-span-2"
+            v-model="areaBBase"
+            type="text"
+            placeholder="Enter value"
+          />
+
+          <div class="flex items-center gap-4">
+            <span class="text-xl italic">h<sub>b</sub></span>
+            <span class="text-sm">Height</span>
+          </div>
+          <input
+            class="input col-span-2"
+            v-model="areaHbHeight"
+            type="text"
+            placeholder="Enter value"
+          />
         </div>
-
-        <input class="col-span-2 rounded-md" v-model="bBase" type="text" />
-
-        <div class="flex items-center gap-4">
-          <span class="text-xl italic">h<sub>b</sub></span>
-          <span class="text-sm">Height</span>
+        <div v-if="areaBBase! > 0 && areaHbHeight! > 0" class="mt-4">
+          Area = {{ area }}
         </div>
-
-        <input class="col-span-2 rounded-md" v-model="hbHeight" type="text" />
       </div>
-      <div class="mt-4">Area = {{ area }}</div>
-    </div>
-    <div v-if="!isSolvingArea" class="mt-4">
-      <div class="grid grid-cols-3 gap-y-2">
-        <div class="flex items-center gap-4">
-          <span class="text-xl italic">a</span>
-          <span class="text-sm">Side</span>
+
+      <div v-if="!isSolvingArea" class="mt-4">
+        <div class="grid grid-cols-3 gap-y-2">
+          <div class="flex items-center gap-4">
+            <span class="text-xl italic">a</span>
+            <span class="text-sm">Side</span>
+          </div>
+
+          <input
+            class="input col-span-2"
+            v-model="perimeterASide"
+            type="text"
+            placeholder="Enter value"
+          />
+
+          <div class="flex items-center gap-4">
+            <span class="text-xl italic">b</span>
+            <span class="text-sm">Base</span>
+          </div>
+
+          <input
+            class="input col-span-2"
+            v-model="perimeterBBase"
+            type="text"
+            placeholder="Enter value"
+          />
+
+          <div class="flex items-center gap-4">
+            <span class="text-xl italic">c</span>
+            <span class="text-sm">Side</span>
+          </div>
+
+          <input
+            class="input col-span-2"
+            v-model="perimeterCSide"
+            type="text"
+            placeholder="Enter value"
+          />
         </div>
-
-        <input class="col-span-2 rounded-md" v-model="aSide" type="text" />
-
-        <div class="flex items-center gap-4">
-          <span class="text-xl italic">b</span>
-          <span class="text-sm">Base</span>
+        <div
+          v-if="perimeterASide! > 0 && perimeterBBase! > 0 && perimeterCSide! > 0"
+          class="mt-4"
+        >
+          Perimeter = {{ perimeter }}
         </div>
-
-        <input class="col-span-2 rounded-md" v-model="bBase" type="text" />
-
-        <div class="flex items-center gap-4">
-          <span class="text-xl italic">c</span>
-          <span class="text-sm">Side</span>
-        </div>
-
-        <input class="col-span-2 rounded-md" v-model="cSide" type="text" />
       </div>
-      <div class="mt-4">Perimeter = {{ perimeter }}</div>
     </div>
   </div>
 </template>
