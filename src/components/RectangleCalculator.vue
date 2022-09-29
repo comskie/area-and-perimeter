@@ -1,17 +1,13 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { computed, ref } from "vue";
 
-// const aSide = ref<number>(0);
-const length = ref<number>(0);
-const width = ref<number>(0);
+const length = ref<number>();
+const width = ref<number>();
 
-function getArea() {
-  return Number(width.value) * Number(length.value);
-}
-
-function getPerimeter() {
-  return 2 * (Number(length.value) + Number(width.value));
-}
+const area = computed(() => Number(length.value) * Number(width.value));
+const perimeter = computed(
+  () => 2 * (Number(length.value) + Number(width.value))
+);
 </script>
 
 <template>
@@ -22,19 +18,29 @@ function getPerimeter() {
         <span class="text-sm">Length</span>
       </div>
 
-      <input class="col-span-2 rounded-md" v-model="length" type="text" />
+      <input
+        class="input col-span-2"
+        v-model="length"
+        type="text"
+        placeholder="Enter value"
+      />
 
       <div class="flex items-center gap-4">
         <span class="text-xl italic">w</span>
         <span class="text-sm">Width</span>
       </div>
 
-      <input class="col-span-2 rounded-md" v-model="width" type="text" />
+      <input
+        class="input col-span-2"
+        v-model="width"
+        type="text"
+        placeholder="Enter value"
+      />
     </div>
-    <div class="mt-4">
-      Area = {{ getArea() }}
+    <div v-if="length! > 0 && width! > 0" class="mt-4">
+      Area = {{ area }}
 
-      <div>Perimeter = {{ getPerimeter() }}</div>
+      <div>Perimeter = {{ perimeter }}</div>
     </div>
   </div>
 </template>
