@@ -21,10 +21,7 @@ function getPerimeter() {
 
       <input class="col-span-2 rounded-md" v-model="aSide" type="text" />
     </div>
-    <div
-      v-if="aSide !== null && Number(aSide) !== 0 && !isNaN(aSide)"
-      class="mt-4"
-    >
+    <div class="mt-4">
       Area = {{ getArea() }}
 
       <div>Perimeter = {{ getPerimeter() }}</div>
