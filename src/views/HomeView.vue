@@ -85,7 +85,7 @@ onMounted(() => {
         </div>
       </div>
     </main>
-    <footer class="absolute bottom-0">
+    <footer>
       <div class="flex justify-end px-2 pb-1">
         <a
           href="https://www.flaticon.com/free-icons/shapes"
