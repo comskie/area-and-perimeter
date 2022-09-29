@@ -29,7 +29,7 @@ const imagePath = new URL(`../assets/icons/${props.shape}.png`, import.meta.url)
     <img class="mt-2" :src="imagePath" :alt="shape" height="80" width="80" />
     <div>
       <span
-        class="text-lg capitalize font text-stone-100 dark:text-white sm:text-2xl"
+        class="text-lg capitalize text-stone-100 dark:text-white sm:text-2xl"
         >{{ shape }}</span
       >
     </div>
