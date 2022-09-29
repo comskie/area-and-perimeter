@@ -20,7 +20,7 @@ onMounted(() => {
 </script>
 <template>
   <div
-    class="relative bg-gradient-to-t from-indigo-100 dark:bg-neutral-800 dark:from-inherit dark:text-white"
+    class="relative min-h-screen bg-gradient-to-t from-indigo-100 dark:bg-neutral-800 dark:from-inherit dark:text-white"
   >
     <header class="absolute inset-x-0 top-0">
       <div class="container flex justify-end p-4">
