@@ -1,16 +1,14 @@
 <script setup lang="ts">
 import ShapeCard from "../components/ShapeCard.vue";
 import { useDark, useToggle } from "@vueuse/core";
-import { ref } from "vue";
 import SquareCalculator from "../components/SquareCalculator.vue";
 import RectangleCalculator from "../components/RectangleCalculator.vue";
+import TriangleCalculator from "../components/TriangleCalculator.vue";
+import { useShapeStore } from "@/stores/shape";
 
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
-
-const shapes = ["square", "rectangle", "triangle"];
-
-const currentShape = ref(shapes[0]);
+const { isShape, setShape } = useShapeStore();
 </script>
 <template>
   <header class="absolute inset-x-0 top-0">
@@ -52,17 +50,20 @@ const currentShape = ref(shapes[0]);
   >
     <div class="flex h-[50vh] items-end">
       <div class="flex flex-row gap-4">
-        <ShapeCard shape="rectangle" @click="currentShape = 'rectangle'" />
-        <ShapeCard shape="square" @click="currentShape = 'square'" />
-        <ShapeCard shape="triangle" @click="currentShape = 'triangle'" />
+        <ShapeCard shape="rectangle" @click="setShape('rectangle')" />
+        <ShapeCard shape="square" @click="setShape('square')" />
+        <ShapeCard shape="triangle" @click="setShape('triangle')" />
       </div>
     </div>
     <div class="h-[50vh]">
-      <div v-if="currentShape === 'square'" class="mt-12">
+      <div v-if="isShape('square')" class="mt-12">
         <SquareCalculator />
       </div>
-      <div v-if="currentShape === 'rectangle'" class="mt-12">
+      <div v-if="isShape('rectangle')" class="mt-12">
         <RectangleCalculator />
+      </div>
+      <div v-if="isShape('triangle')" class="mt-12">
+        <TriangleCalculator />
       </div>
     </div>
   </main>
