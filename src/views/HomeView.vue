@@ -75,7 +75,7 @@ onMounted(() => {
         />
       </div>
     </div>
-    <div ref="calculator" class="min-h-[50vh] px-4">
+    <div ref="calculator" class="min-h-[50vh] px-2">
       <div v-if="isShape('rectangle')" class="mt-12">
         <RectangleCalculator />
       </div>
