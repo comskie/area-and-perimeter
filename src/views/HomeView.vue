@@ -61,7 +61,7 @@ onMounted(() => {
     >
       <div class="grid grid-rows-2 p-4">
         <div class="flex items-end">
-          <div class="grid grid-flow-col gap-2 sm:gap-4">
+          <div class="grid grid-cols-3 gap-2 sm:gap-4">
             <ShapeCard
               shape="rectangle"
               @click="setShape('rectangle')"
@@ -79,7 +79,7 @@ onMounted(() => {
             />
           </div>
         </div>
-        <div ref="calculator" class="px-2">
+        <div ref="calculator">
           <div v-if="isShape('rectangle')" class="mt-12">
             <RectangleCalculator />
           </div>
