@@ -20,7 +20,7 @@ const imagePath = new URL(`../assets/icons/${props.shape}.png`, import.meta.url)
   <button
     ref="target"
     :class="[
-      'flex h-36 w-28 cursor-pointer select-none flex-col items-center justify-center space-y-4 rounded-md border-indigo-600 bg-indigo-500 p-4  shadow-indigo-200 transition-all duration-200  ease-out dark:bg-indigo-600 dark:shadow-indigo-600/30 sm:h-44 sm:w-36 ',
+      'flex cursor-pointer select-none flex-col items-center justify-center space-y-4 rounded-md border-indigo-600 bg-indigo-500 p-4  shadow-indigo-200 transition-all duration-200  ease-out dark:bg-indigo-600 dark:shadow-indigo-600/30',
       isActive
         ? '-translate-y-2 scale-105 font-bold shadow-xl'
         : 'shadow hover:-translate-y-1 hover:shadow-lg',
