@@ -31,7 +31,7 @@ onMounted(() => {
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="hidden h-6 w-6 dark:block"
+            class="hidden w-6 h-6 dark:block"
           >
             <path
               stroke-linecap="round"
@@ -45,7 +45,7 @@ onMounted(() => {
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="block h-6 w-6 dark:hidden"
+            class="block w-6 h-6 dark:hidden"
           >
             <path
               stroke-linecap="round"
@@ -57,10 +57,10 @@ onMounted(() => {
       </div>
     </header>
     <main
-      class="container flex min-h-screen items-center justify-center transition-all ease-linear"
+      class="container flex items-center justify-center h-screen min-h-screen transition-all ease-linear"
     >
-      <div class="grid min-h-screen grid-rows-2 px-4 py-12">
-        <div class="grid grid-cols-3 place-content-end gap-2 sm:gap-4">
+      <div class="grid h-screen min-h-screen grid-rows-2 px-4 py-12">
+        <div class="grid grid-cols-3 gap-2 place-content-end sm:gap-4">
           <ShapeCard
             shape="rectangle"
             @click="setShape('rectangle')"
