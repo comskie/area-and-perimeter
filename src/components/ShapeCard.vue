@@ -22,7 +22,7 @@ const imagePath = new URL(`../assets/icons/${props.shape}.png`, import.meta.url)
     :class="[
       'flex cursor-pointer select-none flex-col items-center justify-center space-y-4 rounded-md border-indigo-600 bg-indigo-500 p-4  shadow-indigo-500/50 transition-all duration-200  ease-out dark:bg-indigo-600 dark:shadow-indigo-600/30',
       isActive
-        ? '-translate-y-2 scale-105 font-bold shadow-xl'
+        ? '-translate-y-2 font-bold shadow-xl'
         : 'shadow hover:-translate-y-1 hover:shadow-lg',
     ]"
   >
