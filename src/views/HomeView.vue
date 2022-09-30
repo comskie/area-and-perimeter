@@ -78,7 +78,7 @@ onMounted(() => {
           />
         </div>
 
-        <div ref="calculator" class="mt-12">
+        <div ref="calculator">
           <RectangleCalculator v-if="isShape('rectangle')" />
           <SquareCalculator v-if="isShape('square')" />
           <TriangleCalculator v-if="isShape('triangle')" />
