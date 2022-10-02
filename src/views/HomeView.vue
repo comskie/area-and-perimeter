@@ -59,7 +59,9 @@ onMounted(() => {
     <main
       class="container flex h-screen min-h-screen items-center justify-center transition-all ease-linear"
     >
-      <div class="grid h-screen min-h-screen grid-rows-2 gap-12 px-4 py-12">
+      <div
+        class="grid h-screen min-h-screen w-full max-w-lg grid-rows-2 gap-12 px-4 py-12"
+      >
         <div class="grid grid-cols-3 place-content-end gap-2 sm:gap-4">
           <ShapeCard
             shape="rectangle"
